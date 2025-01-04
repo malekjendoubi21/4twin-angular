@@ -1,0 +1,63 @@
+<h2>Add Product</h2>
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <!-- Name -->
+  <div>
+    <label for="name">Name:</label>
+    <input id="name" formControlName="name" />
+    <div *ngIf="productForm.get('name')?.touched && productForm.get('name')?.invalid">
+      <small *ngIf="productForm.get('name')?.errors?.['required']">Name is required.</small>
+      <small *ngIf="productForm.get('name')?.errors?.['minlength']">Name must be at least 5 characters long.</small>
+      <small *ngIf="productForm.get('name')?.errors?.['pattern']">Name must contain only letters.</small>
+    </div>
+  </div>
+
+  <!-- Image -->
+  <div>
+    <label for="image">Image:</label>
+    <input id="image" formControlName="image" />
+  </div>
+
+  <!-- Category ID -->
+  <div>
+    <label for="categoryId">Category ID:</label>
+    <input id="categoryId" type="number" formControlName="categoryId" />
+    <div *ngIf="productForm.get('categoryId')?.touched && productForm.get('categoryId')?.invalid">
+      <small *ngIf="productForm.get('categoryId')?.errors?.['required']">Category ID is required.</small>
+    </div>
+  </div>
+
+  <!-- Description -->
+  <div>
+    <label for="description">Description:</label>
+    <textarea id="description" formControlName="description"></textarea>
+  </div>
+
+  <!-- Price -->
+  <div>
+    <label for="price">Price:</label>
+    <input id="price" formControlName="price" />
+    <div *ngIf="productForm.get('price')?.touched && productForm.get('price')?.invalid">
+      <small *ngIf="productForm.get('price')?.errors?.['required']">Price is required.</small>
+      <small *ngIf="productForm.get('price')?.errors?.['pattern']">Price must be a valid number.</small>
+    </div>
+  </div>
+
+  <!-- Brand -->
+  <div>
+    <label for="brand">Brand:</label>
+    <input id="brand" formControlName="brand" />
+  </div>
+
+  <!-- Promotion -->
+  <div>
+    <label for="promotion">Promotion:</label>
+    <input id="promotion" type="number" formControlName="promotion" />
+    <div *ngIf="productForm.get('promotion')?.touched && productForm.get('promotion')?.invalid">
+      <small *ngIf="productForm.get('promotion')?.errors?.['pattern']">Promotion must be a valid number (0-100).</small>
+      <small *ngIf="productForm.get('promotion')?.errors?.['max']">Promotion cannot exceed 100.</small>
+    </div>
+  </div>
+
+  <!-- Save Button -->
+  <button type="submit" [disabled]="productForm.invalid">Save</button>
+</form>

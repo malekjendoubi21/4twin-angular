@@ -1,0 +1,40 @@
+<div>
+  <h2>Produits de la catégorie</h2>
+  <div *ngIf="filteredProducts.length === 0">
+    <p>Aucun produit trouvé pour cette catégorie.</p>
+  </div>
+
+  <div *ngFor="let product of filteredProducts">
+    <div class="product-card">
+      <img [src]="product.image" alt="Product image" />
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <p>{{ product.price }} DT</p>
+
+      <!-- Bouton Ajouter à la shortlist -->
+      <button (click)="handleAddToShortlist(product.id)">Ajouter à la liste de souhaits</button>
+
+      <!-- Bouton Modifier -->
+      <button (click)="navigateToUpdate(product.id)">Modifier</button>
+
+      <!-- Bouton Supprimer -->
+      <button (click)="deleteProduct(product.id)">Supprimer</button>
+    </div>
+  </div>
+</div>
+
+<!--
+<div>
+  <h2>Liste des Produits</h2>
+  <div *ngFor="let product of listProducts">
+    <app-card-component
+      [id]="product.id"
+      [image]="product.image"
+      [title]="product.name"
+      [description]="product.description"
+      [available]="true"
+      (addToShortlist)="handleAddToShortlist($event)"
+    ></app-card-component>
+  </div>
+</div>
+-->

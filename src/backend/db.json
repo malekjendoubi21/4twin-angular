@@ -1,0 +1,115 @@
+{
+  "categories": [
+    {
+      "id": "1",
+      "title": "4TWIN7",
+      "image": "assets/images/categorie_electromenager.jpg",
+      "description": "description1",
+      "available": true
+    },
+    {
+      "id": "2",
+      "title": "Petit électroménager",
+      "image": "assets/images/categorie_petit_electromenager.jpg",
+      "description": "description2",
+      "available": true
+    },
+    {
+      "id": "3",
+      "title": "Produits informatiques",
+      "image": "assets/images/categorie_produits_informatiques.jpg",
+      "description": "description3",
+      "available": true
+    },
+    {
+      "id": "4",
+      "title": "Smart Phones",
+      "image": "assets/images/categorie_smartPhone.jpg",
+      "description": "description4",
+      "available": true
+    },
+    {
+      "id": "5",
+      "title": "TV, images et son",
+      "image": "assets/images/categorie_tv_image_son.jpg",
+      "description": "description5",
+      "available": true
+    },
+    {
+      "id": "6",
+      "title": "Produits voiture",
+      "image": "assets/images/produits_nettoyages.jpg",
+      "description": "description6",
+      "available": false
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Refrigérateur LGG Inox",
+      "image": "assets/images/refrigerateur-lg.jpg",
+      "categoryId": 1,
+      "description": "",
+      "price": 2800,
+      "brand": "LG",
+      "promotion": 0
+    },
+    {
+      "id": "2",
+      "name": "Refrigérateur Samsung Blanc",
+      "image": "assets/images/refrigerateur_samsung.jpeg",
+      "categoryId": 1,
+      "description": ":",
+      "price": 3526,
+      "brand": "Samsung",
+      "promotion": 0
+    },
+    {
+      "id": "3",
+      "name": "Lave vaisselle Beko",
+      "image": "assets/images/lave_vaisselle.png",
+      "categoryId": 1,
+      "description": "",
+      "price": 1875,
+      "brand": "BEKO",
+      "promotion": 0
+    },
+    {
+      "id": "4",
+      "name": "Oppo Smart Phone",
+      "image": "assets/images/oppo_smart.jpg",
+      "categoryId": 4,
+      "description": "",
+      "price": 1200,
+      "brand": "OPPO",
+      "promotion": 0
+    },
+    {
+      "id": "5",
+      "name": "Hachoir",
+      "image": "assets/images/hachoir.jpg",
+      "categoryId": 2,
+      "description": "",
+      "price": 120,
+      "brand": "Moulinex",
+      "promotion": 0
+    },
+    {
+      "id": "6",
+      "name": "TV 50'' LG",
+      "image": "assets/images/tv_lg.jpg",
+      "categoryId": 5,
+      "description": "",
+      "price": 1800,
+      "brand": "LG",
+      "promotion": 0
+    },
+    {
+      "id": "313b",
+      "name": "aaaaaaaaaaaaaaa",
+      "description": "a",
+      "price": 1,
+      "image": "1"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+<div>
+  <h2>{{ product ? 'Modifier le produit' : 'Ajouter un produit' }}</h2>
+  <form (ngSubmit)="saveProduct(updateForm)" #updateForm="ngForm">
+    <div>
+      <label for="name">Nom</label>
+      <input
+        type="text"
+        id="name"
+        [(ngModel)]="product.name"
+        name="name"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="description">Description</label>
+      <input
+        type="text"
+        id="description"
+        [(ngModel)]="product.description"
+        name="description"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="price">Prix</label>
+      <input
+        type="number"
+        id="price"
+        [(ngModel)]="product.price"
+        name="price"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="image">Image</label>
+      <input
+        type="text"
+        id="image"
+        [(ngModel)]="product.image"
+        name="image"
+        required
+      />
+    </div>
+
+    <div>
+      <button type="submit" [disabled]="!updateForm.form.valid">
+        Mettre à jour
+      </button>
+    </div>
+  </form>
+</div>

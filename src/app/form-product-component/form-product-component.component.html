@@ -1,0 +1,38 @@
+<div>
+  <h2>Ajouter un Produit</h2>
+  <form #productForm="ngForm" (ngSubmit)="saveProduct(productForm)">
+    <div>
+      <label for="name">Nom</label>
+      <input type="text" id="name" [(ngModel)]="product.name" name="name" required />
+    </div>
+    <div>
+      <label for="image">Image URL</label>
+      <input type="text" id="image" [(ngModel)]="product.image" name="image" required />
+    </div>
+    <div>
+      <label for="description">Description</label>
+      <input type="text" id="description" [(ngModel)]="product.description" name="description" required />
+    </div>
+    <div>
+      <label for="price">Prix</label>
+      <input type="number" id="price" [(ngModel)]="product.price" name="price" required />
+    </div>
+    <div>
+      <label for="promotion">Promotion</label>
+      <input type="number" id="promotion" [(ngModel)]="product.promotion" name="promotion" required />
+    </div>
+    <div>
+      <label for="categoryId">Catégorie</label>
+      <input type="number" id="categoryId" [(ngModel)]="product.categoryId" name="categoryId" required />
+    </div>
+
+    <button type="submit" [disabled]="!productForm.form.valid">Ajouter le produit</button>
+  </form>
+
+  <h3>Liste des Produits</h3>
+  <ul>
+    <li *ngFor="let p of list">
+      {{ p.name }} - {{ p.price }} dt
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,18 @@
+<div>
+  <h2>Categories List</h2>
+  <div *ngFor="let categorie of categories">
+    <app-card-component
+      [id]="categorie.id"
+      [image]="categorie.image"
+      [title]="categorie.title"
+      [description]="categorie.description"
+      [available]="categorie.available"
+      (addToShortlist)="handleAddToShortlist($event)"
+    ></app-card-component>
+
+    <!-- Bouton pour naviguer vers les produits de la catégorie -->
+    <button [routerLink]="['/products', categorie.id]">Voir les produits</button>
+  </div>
+
+  <app-products-category></app-products-category>
+</div>
