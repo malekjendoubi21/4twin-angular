@@ -1,0 +1,56 @@
+<div class="container">
+  <h2>Ajouter un Menu</h2>
+  <form [formGroup]="menuForm" (ngSubmit)="onSubmit()">
+    <!-- Titre -->
+    <div class="form-group">
+      <label for="title">Titre</label>
+      <input
+        type="text"
+        id="title"
+        class="form-control"
+        formControlName="title"
+      />
+      <!-- Message d'erreur personnalisé -->
+      <div
+        *ngIf="menuForm.get('title')?.invalid && menuForm.get('title')?.touched"
+        class="text-danger"
+      >
+        Le champ titre est obligatoire.
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea
+        id="description"
+        class="form-control"
+        formControlName="description"
+      ></textarea>
+      <!-- Messages d'erreur personnalisés -->
+      <div
+        *ngIf="
+          menuForm.get('description')?.invalid &&
+          menuForm.get('description')?.touched
+        "
+        class="text-danger"
+      >
+        <p *ngIf="menuForm.get('description')?.errors?.['required']">
+          Le champ description est obligatoire.
+        </p>
+        <p *ngIf="menuForm.get('description')?.errors?.['minlength']">
+          La description doit contenir au moins 10 caractères.
+        </p>
+      </div>
+    </div>
+
+    <!-- Bouton de soumission -->
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="menuForm.invalid"
+    >
+      Ajouter
+    </button>
+  </form>
+</div>

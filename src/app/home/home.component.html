@@ -1,0 +1,11 @@
+<div class="container">
+  <h2>Menus user</h2>
+  <div *ngFor="let menu of reservedMenus">
+    <app-menu [menu]="menu"></app-menu> <!-- Passer chaque menu au MenuComponent -->
+    <a [routerLink]="['/menuDetail', menu.id]" class="btn btn-primary">Détails</a> <!-- Lien vers MenuDetailsComponent -->
+    <button (click)="reserve(menu)">Réserver</button> <!-- Passer le menu sélectionné à la méthode reserve -->
+
+  </div>
+
+
+</div>

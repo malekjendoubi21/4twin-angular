@@ -1,0 +1,23 @@
+
+<!-- Template MenuDetailsComponent -->
+<div *ngIf="menu">
+  <h2>{{ menu.title }}</h2>
+  <img [src]="menu.image" alt="{{ menu.title }}" class="menu-image">
+  <p>{{ menu.description }}</p>
+  <div *ngIf="menu.mark === 0">
+    <p>Aucune note n’est attribuée à ce menu</p>
+  </div>
+  <form [formGroup]="noteForm">
+    <label for="note">Saisir une note (1 à 5)</label>
+    <input id="note" formControlName="note" type="number" min="1" max="5" />
+    <div *ngIf="note?.invalid && note?.touched">
+      <small class="error">La note doit être comprise entre 1 et 5.</small>
+    </div>
+    <button (click)="updateMark()" [disabled]="noteForm.invalid">Noter</button>
+
+  </form>
+
+  <div *ngIf="menu.mark !== 0">
+    <p>Note: {{ menu.mark }}</p>
+  </div>
+</div>

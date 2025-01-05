@@ -1,0 +1,31 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "title": "Menu 1",
+      "image": "./assets/image1.jpg",
+      "description": "Description du menu 1",
+      "mark": 4,
+      "approved": true,
+      "reservations": [1, 2]
+    },
+    {
+      "id": 2,
+      "title": "Menu 2",
+      "image": "image2.jpg",
+      "description": "Description du menu 2",
+      "mark": 5,
+      "approved": false,
+      "reservations": [2]
+    },
+    {
+      "id": 3,
+      "title": "Menu 3",
+      "image": "./assets/image3.jpg",
+      "description": "Description du menu 3",
+      "mark": 0,
+      "approved": true,
+      "reservations": [1]
+    }
+  ]
+}
